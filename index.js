@@ -48,7 +48,6 @@ const generateManager = () => {
         )
 }
 
-// functions to get engineer info and push the engineer object to employee array
 const generateEngineer = (info) => {
     const { name, id, email, github } = info;
     const engineer = new Engineer(name, id, email, github);
@@ -84,7 +83,6 @@ const getEngineerInfo = () => {
         })
 }
 
-// functions to get Intern info and push the Intern object to employee array
 const generateIntern = (info) => {
     const { name, id, email, school } = info;
     const intern = new Intern(name, id, email, school);
@@ -144,7 +142,6 @@ const teamEditMenu = () => {
 }
 
 const completeTeam = (teamInfo) => {
-    // create the output folder if the folder doesn't exist
     if(!fs.existsSync(OUTPUT_DIR)) {
         fs.mkdir((OUTPUT_DIR), (err) => {
             if (err) {
@@ -152,7 +149,7 @@ const completeTeam = (teamInfo) => {
             }
         })
     }
-    // write the data to the html file
+
     fs.writeFile(outputPath, teamInfo, (err) => {
         if(err) {
             console.log(err);
@@ -161,12 +158,10 @@ const completeTeam = (teamInfo) => {
         }
     })
 }
-/*---------------------------------------------------------*/
 
-/*----------------Application initialization---------------*/
+
 const init = () => {
     generateManager();
 }
 
 init();
-/*---------------------------------------------------------*/
