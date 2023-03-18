@@ -10,11 +10,12 @@ const OUTPUT_DIR = path.resolve(__dirname, "output");
 const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./src/page-template.js");
-
+// Array for questions
 let newEmployeesArr = [];
 
 // TODO: Write Code to gather information about the development team members, and render the HTML file.
 
+//Function to create manager
 const generateManager = () => {
     inquirer.prompt([
         {
@@ -47,7 +48,7 @@ const generateManager = () => {
         }
         )
 }
-
+//When engineer created these questions will be asked
 const generateEngineer = (info) => {
     const { name, id, email, github } = info;
     const engineer = new Engineer(name, id, email, github);
@@ -83,6 +84,7 @@ const getEngineerInfo = () => {
         })
 }
 
+//Function to create Intern
 const generateIntern = (info) => {
     const { name, id, email, school } = info;
     const intern = new Intern(name, id, email, school);
@@ -140,7 +142,7 @@ const teamEditMenu = () => {
         }
     })
 }
-
+//Save answers in HTML ina a newly created folder
 const completeTeam = (teamInfo) => {
     if(!fs.existsSync(OUTPUT_DIR)) {
         fs.mkdir((OUTPUT_DIR), (err) => {
