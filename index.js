@@ -51,7 +51,7 @@ const generateManager = () => {
 const generateEngineer = (info) => {
     const { name, id, email, github } = info;
     const engineer = new Engineer(name, id, email, github);
-    employeesArr.push(engineer);
+    newEmployeesArr.push(engineer);
 }
 
 const getEngineerInfo = () => {
@@ -86,7 +86,7 @@ const getEngineerInfo = () => {
 const generateIntern = (info) => {
     const { name, id, email, school } = info;
     const intern = new Intern(name, id, email, school);
-    employeesArr.push(intern);
+    newEmployeesArr.push(intern);
 }
 
 const getInternInfo = () => {
